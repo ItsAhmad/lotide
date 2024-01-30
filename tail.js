@@ -4,26 +4,25 @@ const tail = function(array) {
 };
 
 const assertEqual = function(actual, expected) {
-  if (Array.isArray(actual) && Array.isArray(expected)) {
-    if (actual.length !== expected.length) {
-      console.log("🛑🛑🛑 Assertion Failed: Arrays have different lengths.");
-      return;
-    }
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      console.log("🛑🛑🛑 Assertion Failed: Arrays have different positioning.");
-      return;
-    }
-  }
-
-  console.log("✅✅✅ Assertion Passed: Array is matching.");
-  
 };
+  
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
+assertEqual(result.length, 2); // ensure we get back two elements
+assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
+assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 
+const result2 = tail(["testing2"]);
+assertEqual(result2.length, 0);
+
+const result3 = tail([]);
+assertEqual(result3.length, 0);
+
+const testArray = ["Hello", "Lighthouse", "Labs"];
+const result4 = tail(testArray);
+assertEqual(testArray.length, 3);
