@@ -22,41 +22,36 @@ const assertArraysEqual = function(actual, expected) {
       console.log(`✅✅✅ Assertion Passed: [${actual}] === [${expected}]`);
     } else {
       console.log(`🛑🛑🛑 Assertion Failed: [${actual}] !== [${expected}]`);
-    };
-  };
-};
-
-const middle = function (array) {
-
-  const middleArray = []
-
-  if (array.length == 0) {
-    return middleArray
-  }
-
-  if (array.length == 1) {
-    return middleArray
-  }
-
-  if ((array.length % 1 )) {
-    for (const item in array) {
-
     }
   }
+};
 
-  if ((array.length % 2 )) {
-    
+const middle = function(array) {
+  const middleArray = []; // middle array will return a brand new array
+
+  if (array.length <= 2) { // if the array has 0, 1, or 2 entries in an array, it will not push anything to middleArray
+    return middleArray;
   }
 
-}
+  if (array.length % 2 === 0) { // if array.length divided by 2 has no remainder, it has an even amount of entries
+    const middle1 = array.length / 2 - 1; // to get the first number, it divides in half, and then subtracts one since arrays start from 0
+    const middle2 = array.length / 2; // the second number is simply half the array length
+    middleArray.push(array[middle1], array[middle2]);
+  } else {
+    const middleEntry = Math.floor(array.length / 2); // if array.length is not even, it divides the array in half and takes pushes that index position to middleArray
+    middleArray.push(array[middleEntry]);
+  }
 
+  return middleArray;
+};
 
-middle([1]) // => []
-middle([1, 2]) // => []
+console.log(middle([1])); // => []
+console.log(middle([1, 2])); // => []
 
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
+console.log(middle([1, 2, 3, 4]));
 
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+console.log(middle([1, 2, 3])); // => [2]
+console.log(middle([1, 2, 3, 4, 5])); // => [3]
 
+console.log(middle([1, 2, 3, 4])); // => [2, 3]
+console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
