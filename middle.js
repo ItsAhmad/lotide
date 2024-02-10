@@ -34,12 +34,9 @@ const middle = function(array) {
   }
 
   if (array.length % 2 === 0) { // if array.length divided by 2 has no remainder, it has an even amount of entries
-    const middle1 = array.length / 2 - 1; // to get the first number, it divides in half, and then subtracts one since arrays start from 0
-    const middle2 = array.length / 2; // the second number is simply half the array length
-    middleArray.push(array[middle1], array[middle2]);
+    middleArray.push(array[array.length / 2 - 1], array[array.length / 2]);
   } else {
-    const middleEntry = Math.floor(array.length / 2); // if array.length is not even, it divides the array in half and takes pushes that index position to middleArray
-    middleArray.push(array[middleEntry]);
+    middleArray.push(array[Math.floor(array.length / 2)]);
   }
 
   return middleArray;
@@ -55,3 +52,4 @@ console.log(middle([1, 2, 3, 4, 5])); // => [3]
 
 console.log(middle([1, 2, 3, 4])); // => [2, 3]
 console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
