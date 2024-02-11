@@ -9,21 +9,23 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const eqObjects = function (object1, object2) {
-  const object1Keys = object1.keys(object1)
-  const object2Keys = object2.keys(object2)
-  if (object1Keys !== object2Keys) {
-    console.log(false)
-  } 
+const eqObjects = function(object1, object2) {
+  const object1Keys = Object.keys(object1);
+  const object2Keys = Object.keys(object2);
+
+  if (object1Keys.length !== object2Keys.length) {
+    console.log(false);
+    return;
+  }
 
   for (const key of object1Keys) {
     if (object1[key] !== object2[key]) {
       console.log(false);
+      return;
     }
   }
 
-
-    console.log(true);
+  console.log(true);
 };
 
 const shirtObject = { color: "red", size: "medium" };
@@ -36,6 +38,3 @@ eqObjects(shirtObject, longSleeveShirtObject); // => false
 
 //assertEqual(eqObjects(shirtObject, anotherShirtObject ), true);
 //assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
-
-
-
