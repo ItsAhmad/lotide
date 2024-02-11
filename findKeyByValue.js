@@ -13,10 +13,12 @@ const bestTVShowsByGenre = {
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
-const findKeyByValue = function (object1, value1) {
-
-
-
+const findKeyByValue = function (object, value) {
+  for (const key in object) {
+    if (object[key] === value) {
+      return key
+    }
+  }
 };
 
 
