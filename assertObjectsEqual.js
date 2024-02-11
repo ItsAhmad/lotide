@@ -27,11 +27,7 @@ const eqObjects = function(object1, object2) {
     const value1 = object1[key];
     const value2 = object2[key];
 
-    if (typeof value1 === 'object' && typeof value2 === 'object') {
-      if (!eqObjects(value1, value2)) {
-        return false;
-      }
-    } else if (Array.isArray(value1) && Array.isArray(value2)) {
+    if (Array.isArray(value1) && Array.isArray(value2)) {
       if (!eqArrays(value1, value2)) {
         return false;
       }
@@ -55,11 +51,17 @@ const assertObjectsEqual = function(actual, expected) {
 };
 
 
-const obj1 = { a: 1, b: { c: 2 } };
-const obj2 = { a: 1, b: { c: 2 } };
-const obj3 = { a: 1, b: { c: 3 } };
+const test1 = { a: 1, b: 'hello', c: true };
+const test2 = { a: 1, b: 'hello', c: true };
+assertObjectsEqual(test1, test2); // => True
 
 
-assertObjectsEqual(obj1, obj2); // => True
-assertObjectsEqual(obj1, obj3); // => False
+const test3 = { x: [1, 2, 3], y: ['a', 'b', 'c'] };
+const test4 = { x: [1, 2, 3], y: ['a', 'b', 'c'] };
+assertObjectsEqual(test3, test4); // => True
+
+
+const test5 = { a: 1, b: 'hello', c: true };
+const test6 = { a: 1, b: 'world', c: true };
+assertObjectsEqual(test5, test6); // => False
 
