@@ -32,13 +32,22 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
+/*
+Psuedocode to get my thoughts straight
+
+Each letter should have their own key, and their value is an array, with the numbers representing where they are in a string (0-based)
+
+loop through each letter, and assign it a value 
+make sure to keep in mind the case of when a letter appears multiple times
+
+*/ 
 
 const letterPositions = function(sentence) {
   const results = {};
-  
 
+ 
 
   return results;
 };
 
-console.log(assertArraysEqual(letterPositions("hello"),[1]));
+console.log(letterPositions("lighthouse"));
