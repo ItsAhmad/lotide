@@ -15,11 +15,12 @@ const eqObjects = function (object1, object2) {
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject= { size: "medium", color: "red" };
-
+eqObjects(shirtObject , anotherShirtObject); // => true
 
 const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-
-
-eqObjects(shirtObject , anotherShirtObject); // => true
 eqObjects(shirtObject , longSleeveShirtObject); // => false
-assertEqual(eqObjects(shirtObject), ({color:"red", size:"medium"}));
+
+
+assertEqual(eqObjects(shirtObject, anotherShirtObject ), true);
+assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
+
