@@ -45,9 +45,19 @@ make sure to keep in mind the case of when a letter appears multiple times
 const letterPositions = function(sentence) {
   const results = {};
 
- 
+  for (let i = 0; i < sentence.length; i++) {
+    var letter = sentence[i];
+
+    if (letter !== ' ') {
+      if (results[letter]) {
+        results[letter].push(i);
+      } else {
+        results[letter] = [i];
+      }
+    }
+  }
 
   return results;
 };
 
-console.log(letterPositions("lighthouse"));
+console.log(letterPositions("lighthouse in the house"));
