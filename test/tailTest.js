@@ -1,6 +1,21 @@
-const assertEqual = require('./assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
+describe("#tail", () => {
+  it("removes the head of an array, leaving the 'tail' ", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+
+  it("returns [] when given an empty array", () => {
+    assert.deepEqual(tail([]), []); 
+  });
+});
+
+
+
+
+
+/* 
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
 assertEqual(result.length, 2); // ensure we get back two elements
@@ -17,3 +32,4 @@ const testArray = ["Hello", "Lighthouse", "Labs"];
 const result4 = tail(testArray);
 assertEqual(result4.length, 2);
 
+*/
