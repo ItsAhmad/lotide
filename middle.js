@@ -1,6 +1,3 @@
-const eqArrays = require('../eqArrays');
-
-
 const middle = function(array) {
   const middleArray = []; // middle array will return a brand new array
 
