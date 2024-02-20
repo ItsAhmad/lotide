@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@ahmadameenab/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "First project for Lighthouse Labs",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/ItsAhmad/lotide.git"
   },
-  "author": "",
+  "author": "Ahmad Basl AB Ameen",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ItsAhmad/lotide/issues"
