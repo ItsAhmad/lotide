@@ -15,5 +15,5 @@ assertEqual(result3.length, 0);
 
 const testArray = ["Hello", "Lighthouse", "Labs"];
 const result4 = tail(testArray);
-assertEqual(result4.length, 3);
+assertEqual(result4.length, 2);
 
